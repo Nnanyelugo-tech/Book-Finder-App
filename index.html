@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📚Book Finder App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>📚 Book Finder App</h1>
+        <nav>
+            <a class="btn" href="../book_finder_app/favourite.html">⭐ Favourites</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <input id="searchInput" type="text" placeholder="Search by title, author or year..." required>
+            <button id="searchBtn" class="btn button">Search</button required>
+        </section>
+
+
+        <h2 id="resultsTitle" class="results-title">Showing default books</h2>
+
+        <!-- Spinner -->
+        <div id="loading" class="spinner" aria-live="polite" aria-busy="true"></div>
+
+        <!-- Results -->
+        <div id="results" class="results-display"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h3>📚 Book Finder App</h3>
+            <p>
+                Discover and explore millions of books. Search by title, author or keyword,
+                preview instantly, and add your favourites for later.
+            </p>
+            <p class="credit">
+                Powered by <a href="https://developers.google.com/books" target="_parent">Google Books
+                    API</a> | Made with ❤️ for book lovers!!!
+            </p>
+        </div>
+    </footer>
+    <script type="module" src="../book_finder_app/script/main.js"></script>
+</body>
+
+</html>

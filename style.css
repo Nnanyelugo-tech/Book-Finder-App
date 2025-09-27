@@ -1,0 +1,258 @@
+:root {
+    --blue: #0077cc;
+    --white: #f6f8fb;
+    --card: #fff;
+    --text: #333;
+    --gray: #666;
+    --cancel: #e63946;
+    --yellow: #ffeb3b;
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: var(--blue);
+    color: var(--card);
+    padding: 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn button {
+    background: var(--blue);
+    color: var(--card);
+}
+
+.btn:hover {
+    background: #005fa3;
+}
+
+/* Layout */
+.container {
+    width: min(1300px, 92%);
+    margin: 24px auto 40px auto;
+}
+
+/* Search */
+.search-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.search-section input {
+    flex: 1;
+    max-width: 600px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #dcdfe6;
+}
+
+.search-section button {
+    padding: 12px 18px;
+    border-radius: 10px;
+}
+
+.results-title {
+    text-align: center;
+    font-size: 18px;
+    color: var(--gray);
+    margin: 6px 0 10px
+}
+
+/* display */
+.results-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 17px;  
+}
+
+/* Book card container */
+.book-card {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    display: flex;     
+    flex-direction: column;  
+    justify-content: space-between; 
+    text-align: center;
+    min-height: 300px;    
+}
+
+.book-info {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-card img {
+    width: 110px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+ .book-card h3 {
+    font-size: 17px;
+    margin: 8px 0;
+    color: var(--text);
+    white-space: wrap;    
+    overflow: hidden;        
+    text-overflow: ellipsis; 
+    max-width: 100%;       
+}
+
+/* Author and date */
+.book-card p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.book-card button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.book-card .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto; 
+}
+
+/* Preview button */
+.book-card button:first-child {
+    background: var(--blue);
+    color: var(--card);
+}
+
+.book-card button:first-child:hover {
+    background: #005fa3;
+}
+
+/* Add / Remove button */
+.book-card button:last-child {
+    background: var(--cancel);
+    color: var(--card);
+}
+
+.book-card button:last-child:hover {
+    background: #c0262c;
+}
+
+/* spinner */
+.spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 6px solid #e8eef6;
+    border-top: 6px solid var(--blue);
+    border-radius: 50px;
+    animation: spinner 1s linear infinite;
+    margin: 16px auto;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* favourites */
+.fav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0 6px;
+}
+
+nav .btn {
+    /* background-color: red; */
+    border: 1px solid var(--yellow);
+}
+
+nav .btn:hover {
+    /* text-decoration: underline; */
+    background: #005fa3;
+}
+
+/* footer */
+.footer {
+    margin-top: auto;
+    background-color: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 22px;
+}
+
+.footer a {
+    color: var(--yellow);
+    text-decoration: none
+}
+
+.footer a:hover {
+    text-decoration: underline
+}
+
+@media (max-width:520px) {
+    .fav-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
