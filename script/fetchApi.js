@@ -11,7 +11,7 @@ export async function fetchBooks(query = "books") {
   if (query !== "books") {
     setResultsTitle(`Searching for "${query}"...`);
   } else {
-    setResultsTitle("📚 Popular Books"); 
+    setResultsTitle("📚 Popular Books");
   }
   try {
     const res = await fetch(
@@ -27,19 +27,14 @@ export async function fetchBooks(query = "books") {
       return;
     }
     if (query === "books") {
-      setResultsTitle("📚 Popular Books"); 
+      setResultsTitle("📚 Popular Books");
     } else {
       setResultsTitle(`Showing results for "${query}"`);
     }
     displayBooks(data.items);
-  } catch (err) {
-    console.error("Error fetching books:", err);
-    setResultsTitle("⚠️ Error loading books.");
-  } finally {
-    hideLoading();
-  }
-}
 
-function greet (){
-  console.log
+  } catch (err) { 
+    console.error("Error fetching books:", err); 
+    setResultsTitle("⚠️ Error loading books.");
+   } finally { hideLoading(); }
 }
