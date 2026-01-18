@@ -231,7 +231,7 @@ h1 {
 
 nav .btn {
     /* background-color: red; */
-    border: 1px solid var(--yellow);
+    border: 1px solid gray;
 }
 
 nav .btn:hover {
